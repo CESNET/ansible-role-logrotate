@@ -1,0 +1,14 @@
+---
+# Structure of configuration for logrotate
+# logrotate_applications:
+#  - name: application_name # Name will be used as configuration file name
+#    definition:
+#      - path: [] # List of path for which will be used list of options
+#        options: [] # List of options which will be used for the list of path
+logrotate_applications:
+  - name: application_name
+    definition:
+      - path:
+        options: []
+      - path: []
+        options: []

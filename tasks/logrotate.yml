@@ -1,0 +1,26 @@
+---
+- name: Install Logrotate
+  package:
+    name: "logrotate"
+    state: present
+  tags:
+    - install
+
+- name: Ensure the configuration directory exist
+  file:
+    path: "/etc/logrotate.d"
+    state: directory
+
+- name: Create logrotate application configuration files
+  template:
+    src: 'application.j2'
+    dest: '/etc/logrotate.d/{{ item.name }}'
+    owner: root
+    group: root
+    mode: 0644
+  loop: '{{ logrotate_applications }}'
+  tags:
+    - configuration
+
+- name: "flush handlers"
+  meta: flush_handlers

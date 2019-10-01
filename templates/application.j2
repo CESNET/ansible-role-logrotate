@@ -1,0 +1,9 @@
+{% for definition in item.definition -%}
+
+{{ definition.path | join(" ") }} {
+{% for option in definition.options %}
+    {{ option }}
+{% endfor %}
+}
+
+{% endfor %}
