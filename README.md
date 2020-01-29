@@ -17,7 +17,7 @@ Ansible galaxy role cesnet.logrotate that installs logrotate and prepare basic c
 - hosts: all
   remote_user: root
   vars:
-    logrotate_aplications:
+    logrotate_applications:
       - name: application_name
         definition:
           - path:
